@@ -8,6 +8,8 @@
 
     //Now we connect to the database
 
+    //Use the below format to addd things to tables. We should php file for each thing we are connecting
+    
     $conn = new mysqli('localhost','root','','final');
     if($conn->connect_error){
         die('Connection Failed : ' .$conn->connect_error);
