@@ -11,14 +11,26 @@
 </style>
     </head>
     <body>
+        <!-- This must be on the top of every visible page. It is the nav bar with form options so navigation is easier-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+            <div class="navbar-nav">  
+                <a class="nav-item nav-link" href="/final" >Add User</a>      
+                <a class="nav-item nav-link" href="/final/addcourse.html" >Add Course</a>
+                <a class="nav-item nav-link" href="/final/addenrollment.html" >Add Enrollment</a>
+                <a class="nav-item nav-link" href="/final/updatestudent.html">Add/Update student information</a> 
+                <a class="nav-item nav-link" href="/final/updateprofessor.html">Add/Update professor information</a> 
+                <a class="nav-item nav-link" href="/final/showqueries.php">Query Builder</a>   
+            </div>
+        </nav>
+
         <h1> Welcome to the Computer Science Student Database! </h1>
         <p id="desc"> Please fill out the form below to add information into our database! You may also
-            run queries using the buttons.
+            run queries on the information we have stored using the query builder page.
         </p>
         <div class="row justify-content-center">
         <div class="card w-25">
             <div class="card-header">
-                Please fill out the form below or click proceed to go to the query page
+                Please fill out the form below or click "Skip Registration" to go to the query page
             </div>
             <div class="card-body">
                 <form action="connectNewUser.php" method="post">
@@ -61,5 +73,10 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+    <form action="showqueries.php" method="post">
+        <button type="submit" class="btn btn-success" style="margin-top: 5px;">Skip Registration</button>
+    </form>
+</div>
     </body>
 </html>
