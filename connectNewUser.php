@@ -10,12 +10,14 @@
 
     //Use the below format to addd things to tables. We should php file for each thing we are connecting
     
+    //Change below to create the database and tables if theey do not already exist 
     $conn = new mysqli('localhost','root','','final');
     if($conn->connect_error){
         die('Connection Failed : ' .$conn->connect_error);
     } else {
         $stmt = $conn->prepare("Insert into user(id_number, fname, lname, email, age, is_student)
         values(?, ?, ?, ?, ?, ?)");
+        //Below ensures the values are read as the proper data type
         $stmt->bind_param("isssii", $idNumber, $firstName, $lastName, $email, $age, $isStudent);
         $stmt->execute();
         echo "Form added to database successfully!";
