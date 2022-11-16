@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Computer Science Student Database</title>
+       <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1> Welcome to the Computer Science Student Database! </h1>
+        <p> Please fill out the form below to add information into our database! You may also
+            run queries using the buttons.
+        </p>
+        <div class="row justify-content-center">
+        <div class="card w-25">
+            <div class="card-header">
+                Please fill out the form below or click proceed to go to the query page
+            </div>
+            <div class="card-body">
+                <form action="connectNewUser.php" method="post">
+                    <div class="form-group">
+                        <label for="idNumber">URI ID Number</label>
+                        <input type="text" id="idNumber" class="form-control" name="idNumber"/>
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-sm">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" name="firstName" />
+                            </div>
+
+                                <div class="col-sm">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" name="lastName"/>
+                            </div>
+                            </div>
+                        </div>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" name="email"/>
+                        
+                        <div class="col-sm">
+                        <label for="text">Age</label>
+                        <input type="text" id="age" class="form-control" name="age"/>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="isStudent" value="1" id="isStudent" />
+                            <label class="form-check-label" for="isStudent">I am a student</label>
+                        </div>
+                    </div>
+                        
+                    </div>
+                    <input type="submit" class="btn btn-primary"/>
+                </form>
+            </div>
+            <div class="card-footer">
+                <small>Tyler Hanlon, Rush Daruwallah, Rohan Kelley</small>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
