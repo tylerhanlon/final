@@ -1,27 +1,16 @@
 <?php
-  $hostname = 'localhost';
-  $username = 'root';
-  $password = '';
-  $dbname = 'final';
+ include 'connect.php';
+// In here, we will need to programatically create the query from user input. This can be done using stirng concatenation and post requests from dropdown selection
 
-
-    //Should probably put this into a try/catch block in case db gets nuked
-    //Also this connection is redundant, we dont need to include it.
-    //Going to remove once we know everything is working 
-    
-  $connection = new mysqli('localhost', 'root', '', 'final');
-
-  $query = mysqli_query($connection, "SELECT * FROM user");
-  
+  //For now I just have a hardcoded query which displays all of the people currently in users
+  $query = mysqli_query($connect, "SELECT * FROM users");
 
 ?>
 
-
-
   <div id="content">
-
-    <table class="table table-dark">
-        <thead>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <table style="width: auto !important; margin: auto" class="table table-dark">
+        <thead> 
             <tr>
                 <th scope="col">ID NUMBER</th>
                 <th scope="col">FIRST NAME</th>
