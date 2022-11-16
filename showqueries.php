@@ -1,18 +1,8 @@
 <?php
-  $hostname = 'localhost';
-  $username = 'root';
-  $password = '';
-  $dbname = 'final';
+ include 'connect.php';
 
+  $query = mysqli_query($connect, "SELECT * FROM users");
 
-    //Should probably put this into a try/catch block in case db gets nuked
-    //Also this connection is redundant, we dont need to include it.
-    //Going to remove once we know everything is working 
-    
-  $connection = new mysqli('localhost', 'root', '', 'final');
-
-  $query = mysqli_query($connection, "SELECT * FROM user");
-  
 
 ?>
 
