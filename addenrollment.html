@@ -22,5 +22,42 @@
             </div>
         </nav>
         <h1>Add enrollments here!</h1>
+        <p id="desc"> Please fill in information for any enrollments that need to be added to the database</p>
+        <div class="row justify-content-center">
+            <div class="card w-25">
+                <div class="card-header">
+                    Please fill out the form below to add enrollment information
+                </div>
+                <div class="card-body">
+                    <form action="connectNewEnrollment.php" method="post">
+                        <div class="form-group">
+
+                            <label for="semester">Semester (Fall, Spring, J, Summer)</label>
+                            <input type="text" id="semester" class="form-control" name="semester"/>  
+
+                            <label for="year">Year</label>
+                            <input type="text" id="year" class="form-control" name="year" />
+
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" class="form-control" name="studentId" />
+
+                            <label for="courseId">Course ID</label>
+                            <input type="text" id="courseId" class="form-control" name="courseId"/>
+
+                            <label for="grade">Grade (If course was completed)</label>
+                            <input type="text" id="grade" class="form-control" name="grade"/>
+
+                            
+                        </div>
+                        <div class="col-sm">
+                        <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
+                    </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <small>Tyler Hanlon, Rush Daruwalla, Rohan Kelley</small>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
