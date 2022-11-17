@@ -31,7 +31,7 @@ I cloned this repository into Applications>XAMPP>htdocs when github desktop aske
 DATABASE CONNECTION
 =
 
-I made the code automatically configure databases when you register for the first time. It will create them on myPHP admin. This can be accessed by going to localhost/myphpadmin in your browser. It allows you to do a lot of database management that a youtube video explains pretty quickly. Mainly its useful because we can just delete our database and the code will automatically recreate it.
+I made the code automatically configure databases when you register for the first time. It will create them on myPHP admin. This can be accessed by going to localhost/phpmyadmin in your browser. It allows you to do a lot of database management that a youtube video explains pretty quickly. Mainly its useful because we can just delete our database and the code will automatically recreate it.
 
 
 GITHUB
