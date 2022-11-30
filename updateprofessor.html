@@ -20,5 +20,35 @@
             </div>
         </nav>
         <h1>Update or add professor information here!</h1>
+<p id="desc"> Please fill in information for the updated professor information that needs to be added to the database</p>
+        <div class="row justify-content-center">
+            <div class="card w-25">
+                <div class="card-header">
+                    Please fill out the form below to update a professor
+                </div>
+                <div class="card-body">
+                    <form action="updateProfessor.php" method="post">
+                        <div class="form-group">
+
+                            <label for="idNumber">Professor ID Number</label>
+                            <input type="text" id="idNumber" class="form-control" name="idNumber"/>  
+
+                            <label for="field">Field of study</label>
+                            <input type="text" id="field" class="form-control" name="field" />
+
+                            <label for="level">Level of education (ex: PhD)</label>
+                            <input type="text" id="level" class="form-control" name="level" />
+                            
+                        </div>
+                        <div class="col-sm">
+                        <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
+                    </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <small>Tyler Hanlon, Rush Daruwalla, Rohan Kelley</small>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
