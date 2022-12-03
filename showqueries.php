@@ -1,16 +1,30 @@
 <?php
  include 'connect.php';
-// In here, we will need to programatically create the query from user input. This can be done using stirng concatenation and post requests from dropdown selection
+  //Will display the returned table from any query a user can enter
 
-  //For now I just have a hardcoded query which displays all of the people currently in users
-  $query = mysqli_query($connect, "SELECT * FROM users");
+  //Below retrieves and checks inputted query. It will display an error if the inputted query is incorrect, or it will display the 
+  //proper returned table
 
-  //We will need to have different types of queries. The first content block below will display all information for all users
-  // Maybe try to implement static scrolling table and set the height https://mdbootstrap.com/docs/b4/jquery/tables/scroll/
+  $exception = false;
+
+  if(isset($_POST['input']))
+  {
+    $input = $_POST['input'];
+
+    try {
+      $query = mysqli_query($connect, $input);
+      $data = $query->fetch_all(MYSQLI_ASSOC);
+      $exception = true;
+   
+    } catch (mysqli_sql_exception $e) {
+      echo "Invalid query, please try again";
+      
+    }
+  
+    
+  }
 
 ?>
-   
-
   <div id="content">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   
@@ -19,6 +33,8 @@
     h1 {text-align: center;}
     #desc {text-align: center;}
 </style>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
             <div class="navbar-nav">  
                 <a class="nav-item nav-link" href="/final" >Add User</a>      
@@ -29,30 +45,46 @@
                 <a class="nav-item nav-link" href="/final/showqueries.php">Query Builder</a>    
             </div>
         </nav>
-        <h1> Welcome to the query builder page!</h1>
+
+<h1> Welcome to the Query Search page!</h1>
+    <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <form action="showqueries.php" method="post">
+          <div>
+            <label for="input">Enter a custom query here!</label>
+            <input type="text" id="input" class="form-control" name="input" />
+          </div>
+          <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
+       
+      </form>
+      </div>
+</div>
+                
+
+
+<?php if($exception){ ?>
     <table style="width: auto !important; margin: auto" class="table table-dark">
         <thead> 
             <tr>
-                <th scope="col">ID NUMBER</th>
-                <th scope="col">FIRST NAME</th>
-                <th scope="col">LAST NAME</th>
-                <th scope="col">EMAIL</th>
-                <th scope="col">AGE</th>
-                <th scope="col">IS STUDENT</th>
-
-            </tr>
+            <?php foreach ($query->fetch_fields() as $column){
+              echo '<th>'.htmlspecialchars($column->name).'</th>';
+            } ?>
+            </tr> 
         </thead>
-      <?php while($row = mysqli_fetch_array($query)) { ?>
-      <tr>
-        <td><?php echo $row['id_number']; ?></td>
-        <td><?php echo $row['fname']; ?></td>
-        <td><?php echo $row['lname']; ?></td>
-        <td><?php echo $row['email']; ?></td>
-        <td><?php echo $row['age']; ?></td>
-        <td><?php echo $row['is_student']; ?></td>
-
-      </tr>
-      <?php } ?>
+      <?php if($data) { 
+      
+        foreach ($data as $row) {
+      echo '<tr>';
+          foreach ($row as $cell) {
+            
+            echo '<td>'.htmlspecialchars($cell).'</td>';
+          }
+          echo '</tr>'; 
+        }
+    
+   
+       } ?>
     </table>
+    <?php } ?>
 
    </div>
