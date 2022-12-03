@@ -10,16 +10,17 @@
   if(isset($_POST['input']))
   {
     $input = $_POST['input'];
+    
+    if(!empty($input)){
 
-    try {
-      $query = mysqli_query($connect, $input);
-      $data = $query->fetch_all(MYSQLI_ASSOC);
-      $exception = true;
-   
-    } catch (mysqli_sql_exception $e) {
-      echo "Invalid query, please try again";
-      
-    }
+      try {
+        $query = mysqli_query($connect, $input);
+        $data = $query->fetch_all(MYSQLI_ASSOC);
+        $exception = true;
+      } catch (mysqli_sql_exception $e) {
+        echo "Invalid query, please try again";
+      }
+  }
   
     
   }
@@ -44,7 +45,7 @@
                 <a class="nav-item nav-link" href="/final/updateprofessor.html">Add/Update professor information</a> 
                 <a class="nav-item nav-link" href="/final/showqueries.php">Query Builder</a>    
             </div>
-        </nav>
+        </nav> 
 
 <h1> Welcome to the Query Search page!</h1>
     <div class="row">
@@ -55,7 +56,6 @@
             <input type="text" id="input" class="form-control" name="input" />
           </div>
           <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
-       
       </form>
       </div>
 </div>
@@ -83,6 +83,8 @@
         }
     
    
+       } else {
+        echo '<tr><td colspan="'.$query->field_count.'">No records in the table!</td></tr>';
        } ?>
     </table>
     <?php } ?>

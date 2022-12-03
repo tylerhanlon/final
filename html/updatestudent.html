@@ -11,12 +11,13 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
             <div class="navbar-nav">  
-                <a class="nav-item nav-link" href="/final" >Add User</a>      
-                <a class="nav-item nav-link" href="/final/addcourse.html" >Add Course</a>
-                <a class="nav-item nav-link" href="/final/addenrollment.html" >Add Enrollment</a>
-                <a class="nav-item nav-link" href="/final/updatestudent.html">Add/Update student information</a> 
-                <a class="nav-item nav-link" href="/final/updateprofessor.html">Add/Update professor information</a> 
-                <a class="nav-item nav-link" href="/final/showqueries.php">Query Builder</a>    
+                <a class="nav-item nav-link" href="/final/html" >Add User</a>      
+                <a class="nav-item nav-link" href="/final/html/addcourse.html" >Add Course</a>
+                <a class="nav-item nav-link" href="/final/html/addenrollment.html" >Add Enrollment</a>
+                <a class="nav-item nav-link" href="/final/html/addteaches.html">Add Instructor</a>
+                <a class="nav-item nav-link" href="/final/html/updatestudent.html">Add/Update student information</a> 
+                <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
+                <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a>   
             </div>
         </nav>
         <h1>Update student information here!</h1>
@@ -27,7 +28,7 @@
                     Please fill out the form below to update a student
                 </div>
                 <div class="card-body">
-                    <form action="updateStudent.php" method="post">
+                    <form action="/final/phpfiles/updateStudent.php" method="post">
                         <div class="form-group">
 
                             <label for="idNumber">URI ID Number</label>

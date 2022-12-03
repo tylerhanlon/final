@@ -9,7 +9,7 @@
     $age = $_POST['age'];
     $isStudent = (isset($_POST['isStudent'])) ? 1 : 0;
 
-    $stmt = $connect->prepare("Insert into users(id_number, fname, lname, email, age, is_student)
+    $stmt = $connect->prepare("Insert ignore into users(id_number, fname, lname, email, age, is_student)
     values(?, ?, ?, ?, ?, ?)");
     //Below ensures the values are read as the proper data type
     $stmt->bind_param("isssii", $idNumber, $firstName, $lastName, $email, $age, $isStudent);

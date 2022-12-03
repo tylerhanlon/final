@@ -1,0 +1,430 @@
+[
+{
+    "table":"user",
+    "userid":"111111111",
+    "fname":"Tyler",
+    "lname":"Hanlon",
+    "email":"tyler_hanlon@uri.edu",
+    "age":"21",
+    "is_student":"1"
+    
+},
+{
+    "table":"user",
+    "userid":"111111112",
+    "fname":"James",
+    "lname":"Smith",
+    "email":"james_smith@uri.edu",
+    "age":"18",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111113",
+    "fname":"Robert",
+    "lname":"Johnson",
+    "email":"robert_johnson@uri.edu",
+    "age":"22",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111114",
+    "fname":"Micheal",
+    "lname":"Williams",
+    "email":"micheal_williams@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111115",
+    "fname":"Donna",
+    "lname":"Fox",
+    "email":"donna_fox@uri.edu",
+    "age":"19",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111116",
+    "fname":"Jennifer",
+    "lname":"Winters",
+    "email":"jennifer_winters@uri.edu",
+    "age":"20",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"11111117",
+    "fname":"Megan",
+    "lname":"Jeremy",
+    "email":"Megan_Jeremy@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111118",
+    "fname":"Keith",
+    "lname":"Cheryl",
+    "email":"Keith_Cheryl@uri.edu",
+    "age":"19",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111119",
+    "fname":"Terry",
+    "lname":"smith",
+    "email":"Terry_smith@uri.edu",
+    "age":"18",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111110",
+    "fname":"Ann",
+    "lname":"Jackson",
+    "email":"Ann_jackson@uri.edu",
+    "age":"20",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111121",
+    "fname":"Joe",
+    "lname":"Martin",
+    "email":"Joe_Martin@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111131",
+    "fname":"albert",
+    "lname":"grace",
+    "email":"albert_grace@uri.edu",
+    "age":"19",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111141",
+    "fname":"Philip",
+    "lname":"collins",
+    "email":"Philip_collins@uri.edu",
+    "age":"20",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111151",
+    "fname":"Jean",
+    "lname":"collins",
+    "email":"Jean_collins@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111161",
+    "fname":"Jordan",
+    "lname":"edwards",
+    "email":"Jordan_edwards@uri.edu",
+    "age":"19",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111171",
+    "fname":"Alice",
+    "lname":"morgan",
+    "email":"Alice_morgan@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111181",
+    "fname":"Wayne",
+    "lname":"peterson",
+    "email":"Wayne_peterson@uri.edu",
+    "age":"18",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111191",
+    "fname":"Isabella",
+    "lname":"gray",
+    "email":"Isabella_gray@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111101",
+    "fname":"Diana",
+    "lname":"Myers",
+    "email":"Diana_Myers@uri.edu",
+    "age":"20",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111211",
+    "fname":"Louis",
+    "lname":"long",
+    "email":"Louis_long@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111311",
+    "fname":"danielle",
+    "lname":"Butler",
+    "email":"danielle_Butler@uri.edu",
+    "age":"21",
+    "is_student":"1"
+},
+{
+    "table":"user",
+    "userid":"111111411",
+    "fname":"lisa",
+    "lname":"dipippo",
+    "email":"lisa_dipippo@uri.edu",
+    "age":"0",
+    "is_student":"0"
+},
+{
+    "table":"user",
+    "userid":"111155511",
+    "fname":"lutz",
+    "lname":"hamel",
+    "email":"kayla_coleman@uri.edu",
+    "age":"0",
+    "is_student":"0"
+},
+{
+    "table":"user",
+    "userid":"177711411",
+    "fname":"noah",
+    "lname":"daniels",
+    "email":"noah_daniels@uri.edu",
+    "age":"0",
+    "is_student":"0"
+},
+{
+    "table":"user",
+    "userid":"118921411",
+    "fname":"michael",
+    "lname":"conti",
+    "email":"michael_conti@uri.edu",
+    "age":"0",
+    "is_student":"0"
+},
+{
+    "table":"user",
+    "userid":"472611411",
+    "fname":"marco",
+    "lname":"alvarez",
+    "email":"marco_alvarez@uri.edu",
+    "age":"0",
+    "is_student":"0"
+},
+{
+    "table":"course",
+    "courseid":"CSC411",
+    "coursename":"Computer Organization",
+    "coursesubject":"Computer Science",
+    "coursecredits":"4"
+},
+{
+    "table":"course",
+    "courseid":"CSC212",
+    "coursename":"Data Structures and Algorithms",
+    "coursesubject":"Computer Science",
+    "coursecredits":"4"
+},
+{
+    "table":"course",
+    "courseid":"CSC340",
+    "coursename":"Applied Combinatorics",
+    "coursesubject":"Computer Science",
+    "coursecredits":"4"
+},
+{
+    "table":"enrollments",
+    "semester":"FALL",
+    "year":"2021",
+    "studentid":"111111111",
+    "courseid":"CSC212",
+    "grade": "A"
+},
+{
+    "table":"enrollments",
+    "semester":"FALL",
+    "year":"2021",
+    "studentid":"111111111",
+    "courseid":"CSC411",
+    "grade": "B"
+},
+{
+    "table":"enrollments",
+    "semester":"SPRING",
+    "year":"2022",
+    "studentid":"111111111",
+    "courseid":"4",
+    "grade": "A"
+},
+{
+    "table":"enrollments",
+    "semester":"SPRING",
+    "year":"2021",
+    "studentid":"111111181",
+    "courseid":"CSC411",
+    "grade": "C"
+},
+{
+    "table":"enrollments",
+    "semester":"CSC212",
+    "year":"2021",
+    "studentid":"111111181",
+    "courseid":"CSC212",
+    "grade": "A"
+},
+{
+    "table":"enrollments",
+    "semester":"CSC340",
+    "year":"2021",
+    "studentid":"111111181",
+    "courseid":"CSC340",
+    "grade": "C"
+},
+{
+    "table":"enrollments",
+    "semester":"SPRING",
+    "year":"2022",
+    "studentid":"111111101",
+    "courseid":"CSC340",
+    "grade": "B"
+},
+{
+    "table":"enrollments",
+    "semester":"SPRING",
+    "year":"2022",
+    "studentid":"111111101",
+    "courseid":"CSC212",
+    "grade": "C"
+},
+{
+    "table":"enrollments",
+    "semester":"FALL",
+    "year":"2022",
+    "studentid":"111111117",
+    "courseid":"CSC411",
+    "grade": ""
+},
+{
+    "table":"enrollments",
+    "semester":"FALL",
+    "year":"2022",
+    "studentid":"111111117",
+    "courseid":"CSC212",
+    "grade": ""
+},
+{
+    "table":"enrollments",
+    "semester":"FALL",
+    "year":"2022",
+    "studentid":"11111117",
+    "courseid":"CSC340",
+    "grade": ""
+},  
+{
+    "table":"teaches",
+    "idnumber":"472611411",
+    "courseid":"CSC411",
+    "semester":"SPRING",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"472611411",
+    "courseid":"CSC411",
+    "semester":"FALL",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"472611411",
+    "courseid":"CSC411",
+    "semester":"SPRING",
+    "year":"2021"
+},
+{
+    "table":"teaches",
+    "idnumber":"472611411",
+    "courseid":"CSC411",
+    "semester":"FALL",
+    "year":"2021"
+},
+{
+    "table":"teaches",
+    "idnumber":"118921411",
+    "courseid":"CSC212",
+    "semester":"SPRING",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"118921411",
+    "courseid":"CSC212",
+    "semester":"FALL",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"118921411",
+    "courseid":"CSC212",
+    "semester":"SPRING",
+    "year":"2021"
+},
+{
+    "table":"teaches",
+    "idnumber":"118921411",
+    "courseid":"CSC212",
+    "semester":"FALL",
+    "year":"2021"
+},
+{
+    "table":"teaches",
+    "idnumber":"111155511",
+    "courseid":"CSC340",
+    "semester":"SPRING",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"111155511",
+    "courseid":"CSC340",
+    "semester":"FALL",
+    "year":"2022"
+},
+{
+    "table":"teaches",
+    "idnumber":"111155511",
+    "courseid":"CSC340",
+    "semester":"SPRING",
+    "year":"2021"
+},
+{
+    "table":"teaches",
+    "idnumber":"111155511",
+    "courseid":"CSC340",
+    "semester":"FALL",
+    "year":"2021"
+}
+]
