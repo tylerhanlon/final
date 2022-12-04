@@ -58,7 +58,7 @@ else if ($row['table'] == 'enrollments'){ //If json object is an enrollment
         $semester = $row['semester'];
         $year = $row['year'];
 
-        $teachesstmt = "INSERT INTO teaches(id_number, course_id, semester, year)
+        $teachesstmt = "INSERT IGNORE INTO teaches(id_number, course_id, semester, year)
         VALUES('$idNumber', '$courseId', '$semester', '$year')";
 
         $enrollmentQuery = mysqli_query($connect, $teachesstmt);

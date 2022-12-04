@@ -27,18 +27,25 @@
   }
   
     
+  } else { 
+    $input = "SELECT email, courses.course_id, courses.course_name, teaches_id from 
+    users inner join teaches on teaches.id_number = users.id_number
+    inner join courses on courses.course_id = teaches.course_id";
+    echo "HERE";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
   }
 
 ?>
-  <div id="content">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  
-<style>
-    body {background-color: lightblue;}
-    h1 {text-align: center;}
-    #desc {text-align: center;}
-</style>
 
+<div id="content">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
+  <style>
+      body {background-color: lightblue;}
+      h1 {text-align: center;}
+      #desc {text-align: center;}
+  </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
             <div class="navbar-nav">  
@@ -52,46 +59,41 @@
             </div>
         </nav> 
 
-<h1> Welcome to the Query Search page!</h1>
+
+        <h1> Welcome to the Courses Page!</h1>
     <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
       <form action="showqueries.php" method="post">
           <div>
-            <label for="input">Enter a custom query here!</label>
+            <label for="input">View courses here!</label>
             <input type="text" id="input" class="form-control" name="input" />
           </div>
           <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
       </form>
       </div>
 </div>
-                
 
-
-<?php if($exception){ ?>
-    <table style="width: auto !important; margin: auto" class="table table-dark">
-        <thead> 
-            <tr>
-            <?php foreach ($query->fetch_fields() as $column){
-              echo '<th>'.htmlspecialchars($column->name).'</th>';
-            } ?>
-            </tr> 
-        </thead>
-      <?php if($data) { 
-      
+<?php if(!$exception){
+    echo '<table style="width: auto !important; margin: auto" class="table table-dark">';
+        echo '<thead>';
+            echo '<tr>';
+                foreach ($query->fetch_fields() as $column){
+                    echo '<th>'.htmlspecialchars($column->name).'</th>';
+                }
+            echo '</tr>';
+        echo '</thead>';
+    if($data) {
         foreach ($data as $row) {
-      echo '<tr>';
-          foreach ($row as $cell) {
-            
-            echo '<td>'.htmlspecialchars($cell).'</td>';
-          }
-          echo '</tr>'; 
+            echo '<tr>';
+            foreach ($row as $cell) {
+                echo '<td>'.htmlspecialchars($cell).'</td>';
+            }
+            echo '</tr>';
         }
-    
-   
-       } else {
+    } else {
         echo '<tr><td colspan="'.$query->field_count.'">No records in the table!</td></tr>';
-       } ?>
-    </table>
-    <?php } ?>
+    }
+    echo '</table>';
+} ?>
 
-   </div>
+</div>
