@@ -19,6 +19,16 @@
     $stmt->execute();
     echo "Form added to database successfully!";
     $stmt->close();
+
+    // insert into students if is_student is true
+    if ($isStudent == 1) {
+        $stmt = "INSERT IGNORE INTO students(id_number)
+        VALUES('$idNumber')";
+    } else { // insert into professors
+        $stmt = "INSERT IGNORE INTO professors(id_number)
+        VALUES('$idNumber')";
+    }
+    $query = mysqli_query($connect, $stmt);
         
     //Reroutes to show the query page 
     header("Location:showqueries.php");
