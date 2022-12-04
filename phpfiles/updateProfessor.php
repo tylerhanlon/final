@@ -6,12 +6,13 @@
     $field = $_POST['field'];
     $level = $_POST['level'];
 
-    //Insert new values into professors if idNumber is not there
-    $stmt = $connect->prepare("Insert into professors(id_number, field, level_of_education)
-    values(?, ?, ?)");
-    //Read values in proper format
-    $stmt->bind_param("iss", $idNumber, $field, $level);
-    $stmt->execute();
+    //Belowq throws primary key error so commented for now. Maybe just throw an error if ID is not present and make user register
+    // //Insert new values into professors if idNumber is not there
+    // $stmt = $connect->prepare("Insert into professors(id_number, field, level_of_education)
+    // values(?, ?, ?)");
+    // //Read values in proper format
+    // $stmt->bind_param("iss", $idNumber, $field, $level);
+    // $stmt->execute();
 
     //If ID is found then update
     $query = "UPDATE professors SET field = ?, level_of_education = ? WHERE id_number =?";
