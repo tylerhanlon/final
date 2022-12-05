@@ -13,6 +13,7 @@ if(isset($_POST['AGPC']))
 
 } else if (isset($_POST['classes'])) {
     $sql = "CREATE VIEW list_classes AS SELECT course_name FROM courses";
+    mysqli_query($connect, $sql); // creates view
     $input = "SELECT * from list_classes";
     $query = mysqli_query($connect, $input);
     $data = $query->fetch_all(MYSQLI_ASSOC);
