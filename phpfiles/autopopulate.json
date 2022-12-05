@@ -276,7 +276,7 @@
     "semester":"SPRING",
     "year":"2022",
     "studentid":"111111111",
-    "courseid":"4",
+    "courseid":"CSC411",
     "grade": "A"
 },
 {
@@ -289,7 +289,7 @@
 },
 {
     "table":"enrollments",
-    "semester":"CSC212",
+    "semester":"SPRING",
     "year":"2021",
     "studentid":"111111181",
     "courseid":"CSC212",
@@ -297,7 +297,7 @@
 },
 {
     "table":"enrollments",
-    "semester":"CSC340",
+    "semester":"SPRING",
     "year":"2021",
     "studentid":"111111181",
     "courseid":"CSC340",

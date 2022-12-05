@@ -81,12 +81,15 @@ if($connect->query($createenrollments)){
     echo "There was an error running the query";
 }
 
+// commented teaches_id, was giving duplication
 $createteaches = 'CREATE TABLE IF NOT EXISTS teaches (
-    teaches_id INT AUTO_INCREMENT PRIMARY KEY,
+    /*teaches_id INT AUTO_INCREMENT,*/
     id_number int(9) NOT NULL, 
     course_id VARCHAR(7),
     semester VARCHAR(40),
-    year VARCHAR(30)
+    year VARCHAR(30),
+    Constraint teaches PRIMARY KEY(course_id, semester, year),
+    Constraint teaches FOREIGN KEY(id_number) REFERENCES professors(id_number)
     )';
 
 if($connect->query($createteaches)){

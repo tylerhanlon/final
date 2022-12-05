@@ -48,7 +48,8 @@
                 <a class="nav-item nav-link" href="/final/html/addteaches.html">Add Instructor</a>
                 <a class="nav-item nav-link" href="/final/html/updatestudent.html">Add/Update student information</a> 
                 <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
-                <a class="nav-item nav-link" href="/final/html/showqueries.php">Query Builder</a>    
+                <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a> 
+                <a class="nav-item nav-link" href="/final/phpfiles/premade.php">Premade Queries</a>
             </div>
         </nav> 
 
