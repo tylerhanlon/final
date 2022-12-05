@@ -43,7 +43,7 @@ if(isset($_POST['AGPC']))
 } else if (isset($_POST['num'])) {
     $input = "SELECT COUNT(enrollment_id) as num_of_students, course_name
     FROM enrollments LEFT OUTER JOIN courses ON enrollments.course_id = courses.course_id
-    WHERE year = 2022
+    WHERE year = 2022 AND course_name <> ' '
     GROUP BY course_name
     ORDER BY num_of_students DESC";
     $query = mysqli_query($connect, $input);
