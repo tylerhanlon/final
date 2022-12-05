@@ -26,7 +26,51 @@ if(isset($_POST['AGPC']))
     $query = mysqli_query($connect, $input);
     $data = $query->fetch_all(MYSQLI_ASSOC);
     $exception = true;
-} //add more here
+} else if (isset($_POST['taken'])) {
+    $input = "SELECT fname as First_name, lname as Last_name
+    FROM users
+    WHERE id_number IN (
+        SELECT id_number
+        FROM students INNER JOIN enrollments ON students.id_number = enrollments.student_id
+        WHERE course_id = 'CSC340'
+        UNION
+        SELECT id_number
+        FROM students INNER JOIN enrollments ON students.id_number = enrollments.student_id
+        WHERE course_id = 'CSC212')";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
+    $exception = true;
+} else if (isset($_POST['num'])) {
+    $input = "SELECT COUNT(enrollment_id) as num_of_students, course_name
+    FROM enrollments LEFT OUTER JOIN courses ON enrollments.course_id = courses.course_id
+    WHERE year = 2022
+    GROUP BY course_name
+    ORDER BY num_of_students DESC";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
+    $exception = true;
+} else if (isset($_POST['assisted'])) {
+    $user = $_POST['assisted'];
+    if(!empty($user)){
+      try {
+            $name = explode(" ", $_POST['assisted']);
+            $input = $connect->prepare("SELECT grade, COUNT(grade) AS Num_given, teaches.course_id
+            FROM ENROLLMENTs LEFT OUTER JOIN TEACHES on enrollments.course_id = teaches.course_id AND enrollments.semester = teaches.semester AND teaches.year = enrollments.year
+            WHERE grade <> '' AND id_number IN (
+            SELECT USERs.id_number
+            FROM USERs
+            WHERE fname = ? and lname = ?)
+            GROUP BY grade, course_id");
+            $input->bind_param("ss", $name[0], $name[1]);
+            $input->execute();
+            $query = $input->get_result();
+            $data = $query->fetch_all(MYSQLI_ASSOC);
+            $exception = true;
+      } catch (mysqli_sql_exception $e) {
+        echo "Invalid Input, please try again";
+      }
+  }
+}
 
 ?>
   <div id="content">
@@ -49,24 +93,39 @@ if(isset($_POST['AGPC']))
                 <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
                 <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a>
                 <a class="nav-item nav-link" href="/final/phpfiles/premade.php">Premade Queries</a>
+
             </div>
         </nav> 
 
 <h1> Welcome to the Premade Query Page!</h1>
     <div class="row">
-    <div class="col-lg-10 col-lg-offset-4">
+    <div class="text-center">
       <form action="premade.php" method="post">
           <div>
-                <button type="submit" class="btn btn-success" name="AGPC" style="margin-top: 5px;">Average Grade Per Course</button>
-                <button type="submit" class="btn btn-success" name="classes" style="margin-top: 5px;">List All CS Classes</button>
-                <button type="submit" class="btn btn-success" name="active" style="margin-top: 5px;">Active Professors in 2022</button>
-                <button type="submit" class="btn btn-success" name="input4" style="margin-top: 5px;">Input4</button>
+                <button type="submit" class="btn btn-success" name="AGPC" style="margin-top: 5px; font-size: 14.3px">Average Grade Per Course</button>
+                <button type="submit" class="btn btn-success" name="classes" style="margin-top: 5px; font-size: 14.3px">List All CS Classes</button>
+                <button type="submit" class="btn btn-success" name="active" style="margin-top: 5px; font-size: 14.3px">Active Professors in 2022</button>
+                <button type="submit" class="btn btn-success" name="taken" style="margin-top: 5px; font-size: 14.3px;">Students who have taken CSC212 or CSC340</button>
+                <button type="submit" class="btn btn-success" name="num" style="margin-top: 5px; font-size: 14.3px">Number of students in each course in 2022</button>
           </div>
-      </form>
+          &nbsp;
+                <h3><b>Fill out the Professor's First Name and Last Name to find out what grades they have given in what class</b></h3>
+        <div class="card-body">
+        <form action="premade.php" method="post">
+        <div class="form-group">
+        <div class="card w-25">
+        <div class="row">
+                                <div class="col-sm">
+                                <label for="assisted">Name (Ex: "First Last")</label>
+                                <input type="text" id="assisted" class="form-control" name="assisted" />
+                            </div>
+        </div>
+                    <input type="submit" class="btn btn-primary"/>
+                </form>
       </div>
-</div>
+        </div>
+    </div>
                 
-
 
 <?php if($exception){ ?>
     <table style="width: auto !important; margin: auto" class="table table-dark">
