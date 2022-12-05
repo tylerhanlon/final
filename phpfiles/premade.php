@@ -1,33 +1,31 @@
 <?php
  include 'connect.php';
-  //Will display the returned table from any query a user can enter
-
-  //Below retrieves and checks inputted query. It will display an error if the inputted query is incorrect, or it will display the 
-  //proper returned table
-
-
-  //Why is the below query messed up when you run it on the site? It gives duplicate vals im not sure why
-  //select professors.id_number, fname, lname, email, courses.course_id, courses.course_name, semester, year, course_credits from users inner join professors on users.id_number = professors.id_number inner join teaches on professors.id_number = teaches.id_number inner join courses on teaches.course_id = courses.course_id
+// Will display the premade queries in tables.
 
   $exception = false;
 
-  if(isset($_POST['input']))
-  {
-    $input = $_POST['input'];
-    
-    if(!empty($input)){
+if(isset($_POST['AGPC']))
+{
+    $input = "SELECT course_name, grade as most_frequent_grade FROM enrollments INNER JOIN courses on enrollments.course_id = courses.course_id AND grade != '' GROUP BY course_name ORDER BY most_frequent_grade ASC";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
+    $exception = true;
 
-      try {
-        $query = mysqli_query($connect, $input);
-        $data = $query->fetch_all(MYSQLI_ASSOC);
-        $exception = true;
-      } catch (mysqli_sql_exception $e) {
-        echo "Invalid query, please try again";
-      }
-  }
-  
-    
-  }
+} else if (isset($_POST['classes'])) {
+    $sql = "CREATE VIEW list_classes AS SELECT course_name FROM courses";
+    $input = "SELECT * from list_classes";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
+    $exception = true;
+
+} else if (isset($_POST['active'])) {
+    $input = "SELECT DISTINCT CONCAT(UPPER(SUBSTRING(fname,1,1)),LOWER(SUBSTRING(fname,2))) as First_name, CONCAT(UPPER(SUBSTRING(lname,1,1)),LOWER(SUBSTRING(lname,2))) as Last_name
+    from teaches LEFT OUTER JOIN USERS on teaches.id_number = USERS.id_number
+    WHERE year = 2022";
+    $query = mysqli_query($connect, $input);
+    $data = $query->fetch_all(MYSQLI_ASSOC);
+    $exception = true;
+} //add more here
 
 ?>
   <div id="content">
@@ -48,20 +46,21 @@
                 <a class="nav-item nav-link" href="/final/html/addteaches.html">Add Instructor</a>
                 <a class="nav-item nav-link" href="/final/html/updatestudent.html">Add/Update student information</a> 
                 <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
-                <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a> 
+                <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a>
                 <a class="nav-item nav-link" href="/final/phpfiles/premade.php">Premade Queries</a>
             </div>
         </nav> 
 
-<h1> Welcome to the Query Search page!</h1>
+<h1> Welcome to the Premade Query Page!</h1>
     <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <form action="showqueries.php" method="post">
+    <div class="col-lg-10 col-lg-offset-4">
+      <form action="premade.php" method="post">
           <div>
-            <label for="input">Enter a custom query here!</label>
-            <input type="text" id="input" class="form-control" name="input" />
+                <button type="submit" class="btn btn-success" name="AGPC" style="margin-top: 5px;">Average Grade Per Course</button>
+                <button type="submit" class="btn btn-success" name="classes" style="margin-top: 5px;">List All CS Classes</button>
+                <button type="submit" class="btn btn-success" name="active" style="margin-top: 5px;">Active Professors in 2022</button>
+                <button type="submit" class="btn btn-success" name="input4" style="margin-top: 5px;">Input4</button>
           </div>
-          <input type="submit" class="btn btn-primary justify-content-center" style="margin-top: 5px"/>
       </form>
       </div>
 </div>
