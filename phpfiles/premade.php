@@ -109,11 +109,11 @@ if(isset($_POST['AGPC']))
                 <button type="submit" class="btn btn-success" name="num" style="margin-top: 5px; font-size: 14.3px">Number of students in each course in 2022</button>
           </div>
           &nbsp;
-                <h3><b>Fill out the Professor's First Name and Last Name to find out what grades they have given in what class</b></h3>
+                <h3>Fill out the Professor's First Name and Last Name to find out what grades they have given in what class</h3>
         <div class="card-body">
-        <form action="premade.php" method="post">
+        <form action="premade.php" method="post" style="text-align: center; ">
         <div class="form-group">
-        <div class="card w-25">
+        <div class="col d-flex justify-content-center"><div class="card"></card></div>
         <div class="row">
                                 <div class="col-sm">
                                 <label for="assisted">Name (Ex: "First Last")</label>
