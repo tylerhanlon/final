@@ -23,7 +23,17 @@ if($row['table'] == 'user'){ //If json object is a user
     $stmt = "INSERT IGNORE INTO users(id_number, fname, lname, email, age, is_student)
     VALUES('$idNumber', '$firstName', '$lastName', '$email', '$age', '$isStudent')";
 
- 
+    
+    $query = mysqli_query($connect, $stmt);
+
+    // insert into students if is_student is true
+    if ($isStudent == 1) {
+        $stmt = "INSERT IGNORE INTO students(id_number)
+        VALUES('$idNumber')";
+    } else { // insert into professors
+        $stmt = "INSERT IGNORE INTO professors(id_number)
+        VALUES('$idNumber')";
+    }
     $query = mysqli_query($connect, $stmt);
     }
 
