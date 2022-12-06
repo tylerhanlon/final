@@ -8,6 +8,7 @@
     $studentId = $_POST['studentId'];
     $courseId = $_POST['courseId'];
     $grade = $_POST['grade'];
+    $enrollment_id = $semester.$year.$studentId.$courseId;
 
 $result = mysqli_query($connect, "SELECT course_id FROM courses WHERE course_id = '$courseId'");
 
@@ -17,11 +18,11 @@ if($result->num_rows == 0) {
      echo "ERROR: you must enter the class enformation before enrollment information";
 } else {
 
-    $stmt = $connect->prepare("Insert into enrollments(semester, year, student_id, course_id, grade)
-    values(?, ?, ?, ?, ?)");
+    $stmt = $connect->prepare("Insert ignore into enrollments(enrollment_id, semester, year, student_id, course_id, grade)
+    values(?, ?, ?, ?, ?, ?)");
 
     //Below ensures the values are read as the proper data type
-    $stmt->bind_param("sssss", $semester, $year, $studentId, $courseId, $grade);
+    $stmt->bind_param("ssssss", $enrollment_id, $semester, $year, $studentId, $courseId, $grade);
 
 
 
