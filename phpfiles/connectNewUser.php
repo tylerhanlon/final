@@ -12,7 +12,7 @@
     /*INSERT INTO t1 (a,b,c) VALUES (1,2,3)
   ON DUPLICATE KEY UPDATE c=c+1;*/
 
-    $stmt = $connect->prepare("Insert ignore into users(id_number, fname, lname, email, age, is_student)
+    $stmt = $connect->prepare("Insert into users(id_number, fname, lname, email, age, is_student)
     values(?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE fname=values(fname), lname=values(lname), email=values(email), age=values(age), is_student=values(is_student)");
     //Below ensures the values are read as the proper data type
     $stmt->bind_param("isssii", $idNumber, $firstName, $lastName, $email, $age, $isStudent);

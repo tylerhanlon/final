@@ -55,9 +55,10 @@ else if ($row['table'] == 'enrollments'){ //If json object is an enrollment
         $studentId = $row['studentid'];
         $courseId = $row['courseid'];
         $grade = $row['grade'];
+        $enrollment_id = $semester.$year.$studentId.$courseId;
 
-        $enrollmentstmt = "INSERT INTO enrollments(semester, year, student_id, course_id, grade)
-        VALUES('$semester', '$year', '$studentId', '$courseId', '$grade')";
+        $enrollmentstmt = "INSERT IGNORE INTO enrollments(enrollment_id, semester, year, student_id, course_id, grade)
+        VALUES('$enrollment_id', '$semester', '$year', '$studentId', '$courseId', '$grade')";
 
         $enrollmentQuery = mysqli_query($connect, $enrollmentstmt);
     }

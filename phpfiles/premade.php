@@ -12,7 +12,7 @@ if(isset($_POST['AGPC']))
     $exception = true;
 
 } else if (isset($_POST['classes'])) {
-    $sql = "CREATE VIEW list_classes AS SELECT course_name FROM courses";
+    $sql = "CREATE VIEW IF NOT EXISTS list_classes AS SELECT course_name FROM courses";
     mysqli_query($connect, $sql); // creates view
     $input = "SELECT * from list_classes";
     $query = mysqli_query($connect, $input);

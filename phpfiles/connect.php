@@ -68,7 +68,7 @@ if($connect->query($createcourses)){
 
 
 $createenrollments = 'CREATE TABLE IF NOT EXISTS enrollments (
-    enrollment_id INT AUTO_INCREMENT PRIMARY KEY, 
+    enrollment_id varchar(60) PRIMARY KEY, 
     semester VARCHAR(40),
     year VARCHAR(30),
     student_id INT(9),
