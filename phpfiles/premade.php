@@ -75,7 +75,7 @@ if(isset($_POST['AGPC']))
 ?>
   <div id="content">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  
+  <title>Premade Queries</title>
 <style>
     body {background-color: lightblue;}
     h1 {text-align: center;}
@@ -93,6 +93,7 @@ if(isset($_POST['AGPC']))
                 <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
                 <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a>
                 <a class="nav-item nav-link" href="/final/phpfiles/premade.php">Premade Queries</a>
+                <a class="nav-item nav-link" href="/final/phpfiles/admin.php"> Admin Tools</a>
 
             </div>
         </nav> 

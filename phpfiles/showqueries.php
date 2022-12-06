@@ -39,7 +39,7 @@
     #desc {text-align: center;}
 </style>
 
-
+<title> Query Builder</title>
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
             <div class="navbar-nav">  
                 <a class="nav-item nav-link" href="/final/html" >Add User</a>      
@@ -50,6 +50,7 @@
                 <a class="nav-item nav-link" href="/final/html/updateprofessor.html">Add/Update professor information</a> 
                 <a class="nav-item nav-link" href="/final/phpfiles/showqueries.php">Query Builder</a> 
                 <a class="nav-item nav-link" href="/final/phpfiles/premade.php">Premade Queries</a>
+                <a class="nav-item nav-link" href="/final/phpfiles/admin.php"> Admin Tools</a>
             </div>
         </nav> 
 
