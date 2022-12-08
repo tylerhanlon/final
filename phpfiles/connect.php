@@ -22,9 +22,9 @@ $createusers = 'CREATE TABLE IF NOT EXISTS users (
     lname VARCHAR(30),
     email VARCHAR(50),
     age INT(3),
-    is_student INT(1)
+    is_student INT(1),
+    INDEX idx (fname, lname)
     )';
-
 
 if($connect->query($createusers)){
 } else {
